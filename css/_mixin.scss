@@ -1,0 +1,128 @@
+@import "color";
+
+@mixin top-bg {
+  position: relative;
+  width: 100%;
+  background-color: $cDarkBlue;
+  background-image: url("/img/upa-top1-6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+//ヘッダーのタイトル
+@mixin title-logo {
+  font-family: 'Cabin Sketch', cursive;
+  position: absolute;
+  color: $cWhite;
+}
+
+
+//各セクションのタイトル
+@mixin section-title {
+  .section-title {
+      text-align: center;
+  
+      h2 {
+        text-transform: uppercase;
+        font-size: 35px;
+        @media screen and (max-width: 670px) {
+          font-size: 25px;
+        }
+      }
+  
+      p {
+        font-size: 20px;
+        margin-top: 0.5rem;
+        @media screen and (max-width: 670px) {
+          font-size: 18px;
+        }
+      }
+    }
+}
+
+//長文を書くときに
+@mixin p-margin {
+  p {
+      margin: 1.5rem 0;
+    }
+}
+
+//メインのボタンに
+@mixin main-btn {
+  .main-btn {
+      a {
+        display: inline-block;
+        color: $cWhite;
+        background-color: $cPink;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.5s;
+        text-transform: uppercase;
+        font-size: 20px;
+        padding: 15px 0;
+        
+        @media screen and (max-width: 670px) {
+            font-size: 15px;
+        }
+  
+        span {
+          position: relative;
+          left: 10%;
+          top: 5px;
+          transition: all 0.5s;
+        }
+  
+        &:hover {
+          span {
+            left: 15%;
+          }
+          color: $cDarkBrown;
+        }
+      }
+    }
+}
+
+//ボタンを真ん中寄せにするとき
+@mixin btn-center {
+  .center {
+      text-align: center;
+      margin-top: 50px;
+    }
+}
+
+//セクションの外枠に
+@mixin section-outer {
+  width: 70%;
+  padding: 50px 0;
+  margin: 0 auto;
+  @media screen and (max-width:1000px) {
+    width: 95%;
+  }
+}
+
+//セクション内部のフレックスに
+@mixin flex-outer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+//ホバーで半透明
+@mixin hover-opacity {
+  a {
+      color: $cDarkBrown;
+      transition: all 0.5s;
+  
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+}
+
+//レスポンシブで折り返ししたい時
+@mixin flex-wrap {
+  flex-wrap: wrap;
+  flex-direction: column;
+}

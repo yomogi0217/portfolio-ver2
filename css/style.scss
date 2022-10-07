@@ -1,0 +1,346 @@
+@charset "utf-8";
+@import "reset";
+@import "color";
+@import "mixin";
+
+html {
+  body {
+    font-size: 18px;
+    line-height: 2rem;
+    color: $cDarkBrown;
+    font-family:'Montserrat', 'メイリオ',sans-serif;
+
+    a {
+      text-decoration: none;
+      color: $cPink;
+      transition: all 0.5s;
+      
+      &:hover {
+        color: $cBrown;
+      }
+    }
+
+    .menu-bg {
+      background-color: $cMenuBlue;
+      display: flex;
+      align-items: center;
+      height: 60px;
+
+      ul {
+        margin: 0 5% 0 auto;
+
+        li {
+          display: inline-block;
+          text-transform: uppercase;
+
+          a {
+            padding: 18px 20px;
+            color: $cWhite;
+            text-decoration: none;
+            font-size: 20px;
+            position: relative;
+
+            &::after {
+                content: '';
+                /*絶対配置で線の位置を決める*/
+                position: absolute;
+                bottom: 5px;
+                left: 10%;
+                /*線の形状*/
+                width: 80%;
+                height: 2px;
+                background:$cDarkBlue;
+                /*アニメーションの指定*/
+                transition: all .3s;
+                transform: scale(0, 1);/*X方向0、Y方向1*/
+                transform-origin: left top;/*左上基点*/
+            }
+
+            &:hover:after {
+              transform: scale(1, 1);
+              /*X方向にスケール拡大*/
+            }
+
+          }
+        }
+      }
+    }
+
+    section:nth-child(even) {
+      background-color: $cWhitePink;
+    }
+
+    .contact {
+      width: 100%;
+      .contact-outer {
+        @include section-outer;
+        
+        @include section-title;
+
+        .contact-btn {
+          margin-top: 30px;
+          @include main-btn;
+          
+            .main-btn {
+              a {
+                width: 400px;
+                padding: 50px;
+              }
+            }
+          
+          @include btn-center;
+        }
+      }
+    }
+
+    footer{
+      background-color: $cBrown;
+      text-align: center;
+      color: $cWhite;
+      padding: 50px 0;
+
+      a {
+        color: $cWhite;
+        &:hover {
+          color: $cPink;
+        }
+      }
+
+      .footer-logo {
+        font-family: 'Cabin Sketch', cursive;
+        color: $cWhite;
+        font-size: 50px;
+      }
+      .footer-nav {
+        margin: 35px 0 25px 0;
+        text-transform: uppercase;
+
+        li {
+          display: inline-block;
+          margin-right: 2rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .menu-sp-btn {
+      display: none;
+    }
+    
+    .sp-menu {
+      background-color: $cRGBBlue;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      transition: all 0.5s;
+      z-index: 11;
+
+      ul {
+          list-style: none;
+          position: absolute;
+          top: 20%;
+          left: 50%;
+          transform: translateX(-50%);
+      
+          li {
+            margin: 30px 0;
+            text-align: center;
+      
+            a {
+              color: $cWhite;
+              font-size: 25px;
+              text-transform: uppercase;
+            }
+          }
+        }
+    }
+
+    //サブページの設定
+    .sub-page-header {
+      height: 600px;
+      @include top-bg;
+    }
+
+    .pan-list {
+      background-color: $cMenuBlue;
+      width: 100%;
+      padding: 5px 0 5px 0px;
+      p {
+        margin-left: 15px;
+        text-transform: uppercase;
+        color: $cWhite;
+        span {
+            margin: 0 10px;
+        }
+        a {
+          color: $cWhite;
+          &:hover {
+            color: $cDarkBrown;
+          }
+        }
+      }
+    }
+
+  .page-top-btn {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-weight: bold;
+        text-align: center;
+        background: $cWhite;
+        color: $cPink;
+        transition: all 0.5s;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: solid 3px $cPink;
+        opacity: 0;
+        transition: all 0.5s;
+
+        .material-symbols-outlined {
+          font-size: 40px;
+          line-height: 20px;
+          margin-top: 10px;
+
+          &::after {
+            display: block;
+            content: 'TOP';
+            font-size: 15px;
+          }
+        }
+
+        &.active {
+          opacity: 1;
+        }
+  }
+
+
+    @media screen and (max-width: 670px) {
+
+      font-size: 15px;
+
+      .menu-bg {
+        display: none;
+      }
+
+      .menu-sp-btn {
+        display: block;
+        background-color: $cWhite;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 12;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        span {
+          width: 40px;
+          height: 2px;
+          background-color: $cDarkBlue;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          cursor: pointer;
+          transition: all 0.5s;
+
+          &:nth-child(2) {
+            top: 30px;
+          }
+
+          &:last-child {
+            top: 40px;
+
+            &::after {
+              content: 'MENU';
+              color :$cDarkBlue;
+              font-size: 13px;
+              text-align: center;
+            }
+          }
+        }
+
+        &.open 
+          span {
+            transform: rotate(45deg);
+            top:30px;
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:last-child {
+            transform: rotate(-45deg);
+            top: 30px;
+
+            &::after {
+              content: 'CLOSE';
+              display: inline-block;
+              position: absolute;
+              right: 15px;
+              top: 2px;
+              color: $cDarkBlue;
+              font-size: 13px;
+              text-align: center;
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+      }
+
+      .sp-menu {
+        &.open {
+          right: 0;
+        }
+    }
+
+    .contact {
+      .contact-outer{
+        .contact-btn {
+          .main-btn {
+            a {
+              width: 80%;
+              padding: 25px
+            }
+          }
+        }
+      }
+    }
+
+    .footer-logo {
+        font-family: 'Cabin Sketch', cursive;
+        color: $cWhite;
+        font-size: 40px;
+        line-height: 3rem;
+      }
+      .footer-nav {
+        margin: 35px 0 25px 0;
+
+        li {
+          display: inline-block;
+          margin-right: 1rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    
+
+    }//ここまでブレイクポイント
+
+  }//ここまでbody
+}
+@import "index";
+@import "profile";
+@import "works";
+@import "illust";
+@import "contact";

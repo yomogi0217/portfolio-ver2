@@ -1,0 +1,147 @@
+html {
+  body {
+  
+    .profile-main {
+      width: 100%;
+      .profile-outer {
+          @include section-outer;
+          @include section-title;
+
+          .prf-img-flex {
+            @include flex-outer;
+            .prf-img {
+              width: 45%;
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+          }
+
+        h3 {
+          text-align: center;
+          font-size: 22px;
+        }
+        .profile-text {
+          @include p-margin;
+          .yellow-border {
+            background: linear-gradient(transparent 70%, $cYellow 0%);
+          }
+        }
+      }
+    }
+
+    .links {
+      width: 100%;
+      .links-outer {
+        @include section-outer;
+        @include section-title;
+
+        .btn-links {
+            @include flex-outer;
+            @include main-btn;
+            a {
+              width: 200px;
+            }
+          }
+
+        .text-links {
+          margin-top: 50px;
+          li {
+            list-style: none;
+            display: inline-block;
+            margin-left: 15%;
+          }
+        }
+        
+      }
+    }
+    
+    .skill {
+      width: 100%;
+      .skill-outer {
+        @include section-outer;
+        @include section-title;
+        .skill-flex-outer {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 50px;
+          .skill-inner {
+            width: 20%;
+            h3,p {
+              margin-left: 20px;
+            }
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .skill-other {
+        margin-top: 20px;
+      }
+    }
+
+    .pros {
+      width: 100%;
+      .pros-outer {
+        @include section-outer;
+        @include section-title;
+        .pros-inner {
+          ul,ol {
+            margin: 10px 0 30px 20px;
+          }
+        }
+      }
+    }
+
+
+    @media screen and (max-width: 670px) {
+    
+      .links {
+          width: 100%;
+          .links-outer {      
+            .btn-links {
+              @include flex-wrap;
+              align-items: normal;
+              text-align: center;
+              a {
+                width: 90%;
+              }
+            }
+            .text-links {
+              li {
+                margin-left: 15%;
+                display: block;
+              }
+            }
+          }
+        }
+
+      .skill {
+      .skill-outer {
+        .skill-flex-outer {
+          flex-wrap: wrap;
+          .skill-inner {
+            width: 40%;
+            h3,p {
+              margin-left: 20px;
+            }
+            img {
+              width: 100%;
+            }
+            &:first-child,&:nth-child(2) {
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+      .skill-other {
+        margin-top: 20px;
+      }
+    }
+    
+    }//ブレイクポイントここまで
+
+  }//bodyここまで
+}

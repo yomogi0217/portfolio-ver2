@@ -1,0 +1,268 @@
+@import "mixin";
+@import "color";
+
+html {
+  body {
+    .top-header {
+        height: 650px;
+        @include top-bg;
+        }
+
+        .header-outer{
+          z-index: 2;
+
+          h1 {
+              @include title-logo;
+              font-size: 70px;
+              top: 25%;
+              left: 10%;
+              line-height: 5rem;
+            }
+
+        }
+    
+    .concept {
+      width: 100%;
+
+        .concept-outer {
+          @include section-outer;
+          @include section-title;
+
+          .concept-flex-outer {
+          @include flex-outer;
+
+            .concept-left {
+              width: 40%;
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+            .concept-right {
+              width: 50%;
+            }
+            @include p-margin;
+        }
+      }
+    }
+
+    .profile {
+      width: 100%;
+      
+      .profile-outer {
+        @include section-outer;
+
+        @include section-title;
+
+        .profile-flex-outer {
+          @include flex-outer;
+
+          .profile-left {
+              width: 50%;
+
+              h3 {
+                margin-left: 10%;
+                font-size: 22px;
+              }
+              p {
+                margin: 20px 0 30px 0;
+              }
+
+              @include main-btn;
+              .main-btn{
+                a {
+                  width: 300px;
+                }
+              }
+
+            }
+
+          .profile-right {
+              width: 40%;
+          
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+        }
+      }
+    }
+
+    .works {
+      width: 100%;
+
+      .works-outer {
+        @include section-outer;
+
+        @include section-title;
+
+        .works-flex-outer {
+          @include flex-outer;
+          .works-contents {
+            width: 30%;
+            @include hover-opacity;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      @include main-btn;
+      .main-btn{
+        a {
+          width: 300px;
+        }
+      }
+      @include btn-center;
+    }
+
+    .illust {
+      width: 100%;
+
+      .illust-outer {
+        @include section-outer;
+        
+        @include section-title;
+        @include hover-opacity;
+
+        .illust-price {
+          text-align: center;
+          margin-top: 30px;
+        }
+
+        .illust-flex-outer {
+          @include flex-outer;
+          .illust {
+            width: 30%;
+            img {
+              width: 100%;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+      @include main-btn;
+      .main-btn{
+        a {
+          width: 300px;
+          &:hover {
+            opacity: 1
+          }
+        }
+      }
+      @include btn-center;
+    }
+
+    @media screen and (max-width: 670px) {
+
+        .header-outer {
+          position: initial;
+          h1 {
+            @include title-logo;
+            font-size: 50px;
+            text-align: center;
+            position: absolute;
+            top: 25%;
+            line-height: 5rem;
+          }
+        }
+        .concept{
+          .concept-outer {
+
+            .concept-flex-outer {
+              @include flex-wrap;
+
+              .concept-left {
+                width: 70%;
+              }
+              .concept-right {
+                width: 100%;
+              }
+            }
+          }
+      }
+
+    .profile {
+      width: 100%;
+      .profile-outer {
+        .profile-flex-outer {
+          @include flex-wrap;
+          
+          .profile-left {
+              width: 100%;
+              order: 1;
+
+              h3 {
+                text-align: center;
+                font-size: 18px;
+              }
+              p {
+                margin: 20px 0 30px 0;
+              }
+
+              .main-btn{
+                a {
+                  width: 90%;
+                }
+                &.profile{
+                  text-align: center;
+                }
+              }
+
+            }
+
+          .profile-right {
+              width: 50%;
+          
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+        }
+      }
+    }
+
+    .works {
+      .works-outer {
+        width: 95%;
+        .works-flex-outer {
+          @include flex-wrap;
+          .works-contents {
+            margin-bottom: 25px;
+            width: 100%;
+            @include hover-opacity;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      @include main-btn;
+      .main-btn{
+        a {
+          width: 90%;
+        }
+      }
+      @include btn-center;
+    }
+
+        .illust {    
+          @include main-btn;
+    
+          .main-btn {
+            a {
+              width: 90%;
+            }
+          }
+        }
+
+
+  }//ここまでレスポンシブ
+
+    //ここまでbody
+  }
+}
