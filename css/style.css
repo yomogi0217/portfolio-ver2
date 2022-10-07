@@ -1583,6 +1583,10 @@ html body .contact-form .contact-form-outer .submit-btn .submit {
   font-size: 20px;
   padding: 15px 35px;
   border: 0;
+  transition: all 0.5s;
+}
+html body .contact-form .contact-form-outer .submit-btn .submit:hover {
+  color: #674A4A;
 }
 @media screen and (max-width: 870px) {
   html body .contact-form {
