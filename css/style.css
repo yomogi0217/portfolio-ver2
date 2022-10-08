@@ -1318,8 +1318,8 @@ html body .works .works-outer .work-price h3 {
   font-weight: normal;
   margin-top: 25px;
 }
-html body .works .works-outer .work-price ul {
-  list-style: none;
+html body .works .works-outer .work-price p {
+  margin: 1.5rem 0;
 }
 html body .works .works-outer .works-column {
   width: 90%;
