@@ -20,8 +20,8 @@
   <title>Yomogi Design Works【HP制作・似顔絵・ウーパールーパーイラスト】</title>
   <link rel="icon" href="img/favicon.ico">
   <link rel="canonical" href="https://yomogi-design-works.com/">
+  <link rel="stylesheet" href="mfp.statics/mailformpro.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
-
   <!-- 以下Googleアイコン -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet"
@@ -104,14 +104,12 @@
           <div class="border"></div>
 
             
-              <form action="https://ssl.form-mailer.jp/fm/service/Forms/confirm" method="post" name="form1"
-                ENCTYPE="multipart/form-data" accept-charset="UTF-8">
-                <input type="hidden" name="key" value="d906b4fd761395">
+              <form id="mailformpro" action="mailformpro/mailformpro.cgi" name="form" method="POST">
                 <!-- text -->
                 <div class="table-flex-outer">
                   <div class="table-left">お名前(ニックネーム可)<span class="required">必須</span></div>
                   <div class="table-right">
-                    <input name="field_6603197" type="text" value="" class="name">
+                    <input name="お名前" type="text"  class="name" required="required">
                   </div>
                 </div>
               
@@ -121,7 +119,7 @@
                     メールアドレス<span class="required">必須</span>
                   </div>
                   <div class="table-right">
-                    <input name="field_6603190"  class="mail" type="text" placeholder="info@example.com">
+                    <input type="email" name="email"  class="mail" placeholder="info@example.com" required="required">
                   </div>
                 </div>
               
@@ -132,7 +130,7 @@
                     お問い合わせ項目
                   </div>
                   <div class="table-right">
-                    <select name="field_6603199">
+                    <select name="選択内容">
                       <option value="">------</option>
                       <option value="0">Web関係</option>
                       <option value="1">イラスト関係</option>
@@ -147,22 +145,15 @@
                     お問い合わせ内容<span class="required">必須</span>
                   </div>
                   <div class="table-right">
-                    <textarea name="field_6603204"></textarea>
+                    <textarea name="お問い合わせ内容" required="required" rows="60" cols="100%"></textarea>
                   </div>
                 </div>
               
                 <div class="submit-btn">
                   <p>
-                    <input name="submit" type="submit" value="確認画面へ" class="submit">
-                  </p>
-                  
-                  <p>
-                    <a href="https://www.form-mailer.jp/?utm_source=https://ssl.form-mailer.jp/fms/d906b4fd761395&utm_medium=ownedmedia&utm_campaign=powered-by-formmailer"
-                      target="_blank" id="powered">Powered by FormMailer.</a>
+                    <button type="submit" class="submit">確認画面へ</button>
                   </p>
                 </div>
-              
-                <input type="hidden" name="code" value="utf8">
               </form>
           </div>
 
@@ -188,5 +179,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/particles.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script src="mailformpro/mailformpro.cgi" id="mfpjs"></script>
   
   </html>

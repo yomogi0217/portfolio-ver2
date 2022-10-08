@@ -89,13 +89,17 @@ html {
       }
     }
 
-    .works {
+    .works-top {
       width: 100%;
 
-      .works-outer {
+      .works-top-outer {
         @include section-outer;
-
         @include section-title;
+
+        .work-price {
+          margin-top: 25px;
+          text-align: center;
+        }
 
         .works-flex-outer {
           @include flex-outer;
@@ -225,8 +229,9 @@ html {
       }
     }
 
-    .works {
-      .works-outer {
+    .works-top {
+      width: 100%;
+      .works-top-outer {
         width: 95%;
         .works-flex-outer {
           @include flex-wrap;

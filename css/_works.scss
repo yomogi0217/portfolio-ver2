@@ -6,6 +6,17 @@ html {
         @include section-outer;
         @include section-title;
 
+        .work-price {
+          text-align: center;
+          h3 {
+            font-weight: normal;
+            margin-top: 25px;
+          }
+          ul {
+            list-style: none;
+          }
+        }
+
         .works-column {
           width: 90%;
           margin: 50px auto 0;

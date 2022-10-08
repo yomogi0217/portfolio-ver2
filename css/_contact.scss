@@ -53,20 +53,19 @@ html {
           }
           .table-right {
             width: calc(100% - 300px);
-            .name,
-              .mail {
-                width: 60%;
-                padding: 10px;
-                border: solid 1px $cBrown;
-                border-radius: 10px;
-              }
+            .name , .mail {
+              width: 30%;
+              padding: 10px;
+              border: solid 1px $cBrown;
+              border-radius: 10px;
+            }
             
-              select {
-                width: 40%;
-                padding: 10px;
-                border: solid 1px $cBrown;
-                border-radius: 10px;
-              }
+            select {
+              width: 40%;
+              padding: 10px;
+              border: solid 1px $cBrown;
+              border-radius: 10px;
+            }
             
               textarea {
                 width: 80%;
@@ -86,7 +85,8 @@ html {
             text-align: center;
             margin-top: 25px;
             
-            .submit {
+            button {
+              width: 250px;
               color: $cWhite;
               background-color: $cPink;
               border-radius: 15px;
@@ -95,6 +95,7 @@ html {
               padding: 15px 35px;
               border: 0;
               transition: all 0.5s;
+            }
 
               &:hover {
                 color: $cDarkBrown;
@@ -103,7 +104,6 @@ html {
 
         }
       }
-    }
 
     @media screen and (max-width: 870px) {
 

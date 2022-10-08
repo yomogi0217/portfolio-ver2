@@ -1,0 +1,18 @@
+html {
+  body {
+    .thanks {
+        width: 100%;
+    
+        .thanks-outer {
+          @include section-outer;
+          .caution-text {
+            margin: 25px 0;
+            .caution {
+                color: red;
+                list-style: none;
+            }
+          }
+        }
+    }
+  }
+}
